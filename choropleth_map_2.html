@@ -10,7 +10,7 @@
   <script>
     const spec = {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "title": "COVID-19 Active Cases (10 Oct 2020)",
+  "title": "Percentage of Passenger Transport taken by Car",
   "width": 800,
   "height": 500,
   "data": {
@@ -47,7 +47,7 @@
               "url": "https://raw.githubusercontent.com/bspi0005/FIT3179Week9Homework/refs/heads/main/data/W9HWData2.csv"
             },
             "key": "Country",
-            "fields": ["Cars%"]
+            "fields": ["Cars%", "Rail%", "Buses%"]
           }
         },
       ],
@@ -58,13 +58,15 @@
           "type": "quantitative",
           "scale": {
             "type": "threshold",
-            "domain": [1, 80, 90],
-            "range": ["#fdbe85", "#fd8d3c", "#e6550d", "#a63603"]
+            "domain": [30, 50, 60, 70, 75, 80, 85, 90, 95],
+            "range": ["#F47C5C", "#EE6847", "#E85231", "#E1381B", "#D90A00", "DE0900", "#BF0900", "#9E0800", "#7D0700", "#630700"]
           }
         },
         "tooltip": [
           {"field": "properties.NAME", "type": "nominal", "title": "Country"},
-          {"field": "Cars%", "type": "quantitative" ,"format" : ".2f"}
+          {"field": "Cars%", "type": "quantitative" ,"format" : ".2f"},
+          {"field": "Rail%", "type": "quantitative" ,"format" : ".2f"},
+          {"field": "Buses%", "type": "quantitative" ,"format" : ".2f"}
         ]
       }
     }
